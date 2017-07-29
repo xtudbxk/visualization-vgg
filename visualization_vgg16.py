@@ -173,7 +173,7 @@ class Zoomout_Vgg16:
             
 os.environ["CUDA_VISIBLE_DEVICES"] = sys.argv[0]
 if __name__ == "__main__":
-    deconv_layer = "pool2"
+    deconv_layer = "pool5"
     zoomout = Zoomout_Vgg16("vgg16.npy",deconv_layer=deconv_layer)
     sess = tf.Session()
     sess.run(tf.global_variables_initializer())
@@ -182,7 +182,10 @@ if __name__ == "__main__":
     f_ = sess.run(zoomout.net[deconv_layer],feed_dict={zoomout.net["input"]:[img]})
     for i in range(zoomout.channels[deconv_layer]):
         f = np.zeros([1,int(224/zoomout.strides[deconv_layer]),int(224/zoomout.strides[deconv_layer]),zoomout.channels[deconv_layer]])
-        f[:,:,:,i] = f_[:,:,:,i]
+        #f[:,:,:,i] = f_[:,:,:,i]
+        max_9th_value = np.sort(f_[:,:,:,i]).flatten()[-9]
+        max_9th_mask = np.greater_equal(f_[:,:,:,i],max_9th_value).astype("int8")
+        f[:,:,:,i] = max_9th_mask * f_[:,:,:,i]
         img_v = sess.run(zoomout.net["output_deconv"],feed_dict={zoomout.net["input"]:[img],zoomout.net["input_deconv"]:f})
         mean = np.ones([224,224,3])
         mean[:,:,0] *= VGG_MEAN[2]
