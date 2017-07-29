@@ -13,9 +13,9 @@ note:
 
 some examples:
 input image:
-!(input/test.jpg)
+![test.jpg](input/test.jpg)
 visualization results:
-!(output/pool1_6.png)
-!(output/pool1_11.png)
-!(output/pool2_127.png)
-!(output/pool2_105.png)
+![pool1_6.png](output/pool1_6.png)
+![pool1_11.png](output/pool1_11.png)
+![pool2_105.png](output/pool2_105.png)
+![pool2_127.png](output/pool2_127.png)
