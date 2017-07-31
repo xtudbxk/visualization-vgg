@@ -4,7 +4,7 @@ lization-vgg16
 note:
 1. the base vgg16 construct source code is from [https://github.com/machrisaa/tensorflow-vgg](https://github.com/machrisaa/tensorflow-vgg)
 2. before you start the script file, you should do somethings following:
->1. download the vgg16.npy from [later update](later update) for china and [https://mega.nz/#!YU1FWJrA!O1ywiCS2IiOlUCtCpI6HTJOMrneN-Qdv3ywQP5poecM](https://mega.nz/#!YU1FWJrA!O1ywiCS2IiOlUCtCpI6HTJOMrneN-Qdv3ywQP5poecM) for other countries.
+>1. download the vgg16.npy from [http://pan.baidu.com/s/1jHS95Ym](http://pan.baidu.com/s/1jHS95Ym) for china and [https://mega.nz/#!YU1FWJrA!O1ywiCS2IiOlUCtCpI6HTJOMrneN-Qdv3ywQP5poecM](https://mega.nz/#!YU1FWJrA!O1ywiCS2IiOlUCtCpI6HTJOMrneN-Qdv3ywQP5poecM) for other countries.
 >2. mkdir a input dir, and put a image named "test.jpg" for the input image.
 >3. mkdir a output dir for the output images.
 
